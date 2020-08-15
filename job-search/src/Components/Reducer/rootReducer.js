@@ -9,23 +9,22 @@ export const rootReducer = (state, action) => {
     case ACTION.MAKE_REQUEST:
       return {
         loading: true,
-        job: [],
-        error: false,
+        jobs: [],
       };
     
     case ACTION.GET_DATA:
       return {
         ...state,
         loading: false,
-        job: [action.payload.job],
+        jobs: action.payload.job,
       };
     
-    case ERROR:
+    case ACTION.ERROR:
       return {
         ...state,
         loading: false,
-        job: [],
         error: action.payload.error,
+        jobs: []
       };
     
     default:
