@@ -1,7 +1,7 @@
 const ACTION = {
-  MAKE_REQUEST: "MAKE_REQUEST",
-  GET_DATA: "GET_DATA",
-  ERROR: "ERROR",
+  MAKE_REQUEST: 'MAKE_REQUEST',
+  GET_DATA: 'GET_DATA',
+  ERROR: 'ERROR',
 };
 
 export const rootReducer = (state, action) => {
@@ -11,22 +11,22 @@ export const rootReducer = (state, action) => {
         loading: true,
         jobs: [],
       };
-    
+
     case ACTION.GET_DATA:
       return {
         ...state,
         loading: false,
         jobs: action.payload.jobs,
       };
-    
+
     case ACTION.ERROR:
       return {
         ...state,
         loading: false,
         error: action.payload.error,
-        jobs: []
+        jobs: [],
       };
-    
+
     default:
       return state;
   }
