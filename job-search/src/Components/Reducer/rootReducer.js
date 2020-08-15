@@ -16,7 +16,7 @@ export const rootReducer = (state, action) => {
       return {
         ...state,
         loading: false,
-        jobs: action.payload.job,
+        jobs: action.payload.jobs,
       };
     
     case ACTION.ERROR:

@@ -13,7 +13,11 @@ function App() {
       <Container>
         {loading && <h2>Loading Jobs...</h2>}
         {error && <h2>Error Loading Jobs. Try Refreshing.</h2>}
-        {jobs && jobs.length}
+        {jobs && jobs.map((job) => {
+          return (
+            <Job key={job.id} job={job}/>
+          )
+        })}
       </Container>
     </div>
   );
