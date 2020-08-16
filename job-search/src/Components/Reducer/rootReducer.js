@@ -26,7 +26,6 @@ export const rootReducer = (state, action) => {
         error: action.payload.error,
         jobs: [],
       };
-
     default:
       return state;
   }

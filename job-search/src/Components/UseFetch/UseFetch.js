@@ -16,6 +16,7 @@ export const useFetch = (params, page) => {
     dispatch({ type: 'MAKE_REQUEST' });
     axios
       .get(url, {
+        cancelToken: cancelToken.token,
         params: { markdown: true, page: page, ...params },
       })
       .then((res) => {
@@ -26,7 +27,7 @@ export const useFetch = (params, page) => {
         if (axios.isCancel(err)) return;
         dispatch({ type: 'ERROR', payload: { error: err } });
       });
-
+  
     return () => {
       cancelToken.cancel();
     };
