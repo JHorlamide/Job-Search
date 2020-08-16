@@ -9,7 +9,7 @@ import SearchJob from './Components/SearchJob/SearchJob';
 function App() {
   const [params, setParams] = useState({});
   const [page, setPage] = useState(1);
-  const { loading, jobs, error } = useFetch(params, page);
+  const { loading, jobs, error} = useFetch(params, page);
 
   const handleParams = (e) => {
     const params = e.target.name;
